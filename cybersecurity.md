@@ -1,19 +1,4 @@
 
-
-Skip to content
-Using Gmail with screen readers
-(no subject)
-Inbox
-Kristo Mihkelson
-	
-	Attachments7:21 PM (5 minutes ago)
- 
-Kristo Mihkelson <krismihkel@gmail.com>
-	
-7:23 PM (3 minutes ago)
-	
-	
-to me
 # Kubernetes (K3s) DevSecOps & Runtime Security Lab
 
 A fully documented, hands-on DevSecOps and cloud-native security laboratory built on Ubuntu Linux. This project covers Kubernetes cluster provisioning, automated container vulnerability scanning, kernel-level runtime intrusion detection using eBPF, and zero-trust network segmentation.
