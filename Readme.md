@@ -147,25 +147,26 @@ Create and apply the isolate-db.yaml manifest to restrict incoming TCP traffic o
 Bash
 kubectl apply -f isolate-db.yaml
 ```
-📊 Raw Execution Verification & Logs
-Trivy Vulnerability Audit Report
-Plaintext
-Target: nginx:1.14.0 (debian 9.5)
-Total Vulnerabilities Detected: 289
+#### 📊 Raw Execution Verification & Logs
+#### Trivy Vulnerability Audit Report
+#### Plaintext
+#### Target: nginx:1.14.0 (debian 9.5)
+#### Total Vulnerabilities Detected: 289
 --------------------------------------------------
-CRITICAL : 39
-HIGH     : 107
-MEDIUM   : 65
-LOW      : 69
-UNKNOWN  : 9
+#### CRITICAL : 39
+#### HIGH     : 107
+#### MEDIUM   : 65
+#### LOW      : 69
+#### UNKNOWN  : 9
 
-Key Findings:
-- dpkg: CVE-2022-1664 (CRITICAL) - Dpkg::Source::Archive arbitrary file overwrite
-- libssl1.1: CVE-2018-0732 (HIGH) - Malicious DH prime denial of service
-- glibc (libc6): CVE-2017-18269 (CRITICAL) - Memory corruption in memcpy
-- shadow-utils (passwd/login): CVE-2017-12424 (CRITICAL) - Buffer overflow
-Falco eBPF Kernel Intrusion Alert
-Plaintext
+### Key Findings:
+#### - dpkg: CVE-2022-1664 (CRITICAL) - Dpkg::Source::Archive arbitrary file overwrite
+#### - libssl1.1: CVE-2018-0732 (HIGH) - Malicious DH prime denial of service
+#### - glibc (libc6): CVE-2017-18269 (CRITICAL) - Memory corruption in memcpy
+#### - shadow-utils (passwd/login): CVE-2017-12424 (CRITICAL) - Buffer overflow
+#### Falco eBPF Kernel Intrusion Alert
+### Plaintext
+```
 18:36:25.231548601: Warning Sensitive file opened for reading by non-trusted program |
 file=/etc/shadow gparent=<NA> ggparent=<NA> gggparent=<NA>
 evt_type=open user=root user_uid=0 user_loginuid=-1 process=cat
@@ -173,6 +174,7 @@ proc_exepath=/bin/busybox parent=systemd command=cat /etc/shadow
 terminal=34816 container_id=9727be962b72 container_name=test-target
 container_image_repository=docker.io/library/alpine container_image_tag=latest
 k8s_pod_name=test-target k8s_ns_name=default
+```
 ### 📜 Manifests & Configurations
 ```
 isolate-db.yaml
@@ -198,10 +200,10 @@ spec:
       port: 5432
 ```
 ### 📁 Repository File Structure
-Plaintext
-k3s-devsecops-security-lab/
-├── README.md           # Comprehensive laboratory guide, architecture, and logs
-└── isolate-db.yaml     # Kubernetes NetworkPolicy declarative configuration
+### Plaintext
+#### k3s-devsecops-security-lab/
+##### ├── README.md           # Comprehensive laboratory guide, architecture, and logs
+##### └── isolate-db.yaml     # Kubernetes NetworkPolicy declarative configuration
 ### 🧠 Core Competencies & Key Takeaways
 #### eBPF Observability: Real-time visibility into process executions, network connections, and file access at the Linux kernel layer.
 
